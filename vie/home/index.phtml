@@ -1,0 +1,45 @@
+<nav class="navbar navbar-default navbar-fixed-bottom " style="border-top-color: #6699ff;">
+    <div class="btn-group btn-group-justified btn-fixed-bottom" role="group" aria-label="main menu">
+        <div class="btn-group btn-group-lg" role="group">
+            <button type="button" class="btn" id="home">
+                <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+            </button>
+        </div>
+        <div class="btn-group btn-group-lg" role="group">
+            <button type="button" class="btn" id="calendar">
+                <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+            </button>
+        </div>
+        <?php if (isset($_SESSION["Id"])) { ?>
+        <div class="btn-group btn-group-lg" role="group">
+            <button type="button" class="btn" id="logout">
+                <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+            </button>
+        </div>
+        <?php } else { ?>
+        <div class="btn-group btn-group-lg" role="group">
+            <button type="button" class="btn" id="login">
+                <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
+            </button>
+        </div>
+        <?php } ?>
+    </div>
+</nav>
+
+<div class="container">
+    <div id="view">
+        <img class="img-responsive" src="img/header.png" alt="Chania">
+    </div>
+    <br><br>
+</div>
+
+<script>
+$(document).ready(function() {
+  $.getScript("lib/vcl/nav.js",function() {
+    $("#home").click(function() { show("home","index","body",""); });
+    $("#calendar").click(function() { show("calendar","index","#view",""); });
+    $("#logout").click(function() { show("home","logout","#view",""); });
+    $("#login").click(function() { show("home","login","#view",""); });
+  });
+});
+</script>

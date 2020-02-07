@@ -1,0 +1,1 @@
+[05-Feb-2020 15:47:43 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home3/coagus/iglesiapp.christianagustin.com/vie/home/index.phtml:18) in /home3/coagus/iglesiapp.christianagustin.com/vie/home/index.phtml on line 18
